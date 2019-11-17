@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="circle_button_size">60dp</dimen>
+    <dimen name="tv_remote_top_button_height">100dp</dimen>
+    <dimen name="vertical_button_size">60dp</dimen>
+    <dimen name="central_button_size">65dp</dimen>
+    <dimen name="central_circle_button_size">90dp</dimen>
+</resources>

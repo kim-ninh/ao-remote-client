@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AO Remote</string>
+    <string name="no_connection">Couldn\'t connect to ESP server</string>
+    <string name="retry">Retry</string>
+    <string name="exit">Exit</string>
+    <string name="power">Power</string>
+    <string name="home">Home</string>
+    <string name="input_source">Input source</string>
+    <string name="menu">Menu</string>
+    <string name="numeric_buttons">Numeric buttons</string>
+    <string name="back">Back</string>
+    <string name="more">More</string>
+    <string name="channel">Channel</string>
+    <string name="volume">Volume</string>
+    <string name="mute">Mute</string>
+</resources>
