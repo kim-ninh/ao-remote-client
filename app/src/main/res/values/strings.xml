@@ -13,4 +13,11 @@
     <string name="channel">Channel</string>
     <string name="volume">Volume</string>
     <string name="mute">Mute</string>
+    <string name="timer">Timer</string>
+    <string name="sleep">Sleep</string>
+    <string name="mode">Mode</string>
+    <string name="speed">Speed</string>
+    <string name="direction">Direction</string>
+    <string name="swing">Swing</string>
+    <string name="temp">Temp</string>
 </resources>
