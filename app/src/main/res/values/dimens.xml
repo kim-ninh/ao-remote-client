@@ -5,4 +5,5 @@
     <dimen name="vertical_button_size">60dp</dimen>
     <dimen name="central_button_size">65dp</dimen>
     <dimen name="central_circle_button_size">90dp</dimen>
+    <dimen name="fan_remote_button_height">80dp</dimen>
 </resources>
