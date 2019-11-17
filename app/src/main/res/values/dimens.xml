@@ -7,4 +7,5 @@
     <dimen name="central_circle_button_size">90dp</dimen>
     <dimen name="fan_remote_button_height">80dp</dimen>
     <dimen name="ac_remote_button_size">80dp</dimen>
+    <dimen name="projector_remote_button_size">90dp</dimen>
 </resources>

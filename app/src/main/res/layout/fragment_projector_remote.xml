@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp">
+
+        <Button
+            android:id="@+id/btnOK"
+            style="@style/CircleButton"
+            android:layout_width="@dimen/central_circle_button_size"
+            android:layout_height="@dimen/central_circle_button_size"
+
+            android:text="@android:string/ok"
+            app:layout_constraintStart_toEndOf="@id/btn_left"
+            app:layout_constraintTop_toBottomOf="@id/btn_up" />
+
+        <ImageButton
+            android:id="@+id/btn_up"
+            style="@style/CentralButton"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/round_arrow_drop_up_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/btn_down"
+            style="@style/CentralButton"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/btn_up"
+            app:layout_constraintTop_toBottomOf="@id/btnOK"
+            app:srcCompat="@drawable/round_arrow_drop_down_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/btn_left"
+            style="@style/CentralButton"
+
+            app:layout_constraintBottom_toBottomOf="@+id/btnOK"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_up"
+            app:srcCompat="@drawable/round_arrow_left_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/btn_right"
+            style="@style/CentralButton"
+
+            app:layout_constraintBottom_toBottomOf="@+id/btnOK"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnOK"
+            app:layout_constraintTop_toTopOf="@id/btnOK"
+            app:srcCompat="@drawable/round_arrow_right_black_24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/projector_remote_button_size"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_power"
+            style="@style/MyButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/round_power_settings_new_black_24dp"
+            android:text="@string/power" />
+
+        <Button
+            android:id="@+id/btn_menu"
+            style="@style/MyButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/round_menu_black_24dp"
+            android:text="@string/menu" />
+
+        <Button
+            android:id="@+id/btn_back"
+            style="@style/MyButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/round_reply_black_24dp"
+            android:text="@string/back" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/projector_remote_button_size"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/volume" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            style="@style/MyButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/round_remove_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            style="@style/MyButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/round_add_black_24dp" />
+
+    </LinearLayout>
+</LinearLayout>
