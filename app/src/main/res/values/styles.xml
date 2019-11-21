@@ -39,5 +39,10 @@
         <item name="android:layout_height">@dimen/central_button_size</item>
     </style>
 
+    <style name="GridTwoColButton" parent="MyButton">
+        <item name="android:drawablePadding">0dp</item>
+        <item name="android:layout_width">@dimen/two_col_button_size</item>
+        <item name="android:layout_height">@dimen/two_col_button_size</item>
+    </style>
 
 </resources>

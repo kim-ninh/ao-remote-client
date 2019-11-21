@@ -20,4 +20,11 @@
     <string name="direction">Direction</string>
     <string name="swing">Swing</string>
     <string name="temp">Temp</string>
+    <string name="tv">TV</string>
+    <string name="fan">Fan</string>
+    <string name="ac">AC</string>
+    <string name="projector">Projector</string>
+    <string name="tv_box">TV Box</string>
+    <string name="add_device">Add Device</string>
+    <string name="empty_devices_list_info">No device add yet.\nAdd new device to begin</string>
 </resources>

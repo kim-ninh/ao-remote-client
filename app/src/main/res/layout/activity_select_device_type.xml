@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.gridlayout.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="8dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="8dp"
+    app:columnCount="2"
+    app:useDefaultMargins="true"
+    tools:context=".PickDeviceTypeActivity">
+
+    <Button
+        android:id="@+id/btn_tv"
+        style="@style/GridTwoColButton"
+        android:drawableTop="@drawable/television_type"
+        android:text="@string/tv"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/btn_fan"
+        style="@style/GridTwoColButton"
+        android:drawableTop="@drawable/fan_type"
+        android:text="@string/fan"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/btn_ac"
+        style="@style/GridTwoColButton"
+        android:drawableTop="@drawable/air_conditioner_type"
+        android:text="@string/ac"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/btn_projector"
+        style="@style/GridTwoColButton"
+        android:drawableTop="@drawable/projector_type"
+        android:text="@string/projector"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/btn_tv_box"
+        style="@style/GridTwoColButton"
+        android:drawableTop="@drawable/apple_tv_type"
+        android:text="@string/tv_box"
+        app:layout_columnWeight="1" />
+
+
+</androidx.gridlayout.widget.GridLayout>

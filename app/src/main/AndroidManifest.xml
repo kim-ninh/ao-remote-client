@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RemoteControlActivity"></activity>
+        <activity android:name=".PickDeviceTypeActivity"></activity>
+        <activity android:name=".RemoteControlActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
