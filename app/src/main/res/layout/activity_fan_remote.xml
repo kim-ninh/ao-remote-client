@@ -3,64 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_margin="8dp">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.2"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cooler" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout6"
+    <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/fan_remote_button_height"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
-        app:layout_constraintStart_toStartOf="parent">
-
+        android:layout_height="wrap_content"
+        app:columnCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:useDefaultMargins="true">
         <Button
             android:id="@+id/btn_power"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/FanRemoteButton"
+
+            app:layout_columnWeight="1"
             android:text="@string/power"
             android:textColor="@color/red" />
 
         <Button
             android:id="@+id/btn_timer"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/FanRemoteButton"
+
+            app:layout_columnWeight="1"
             android:text="Timer" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout7"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/fan_remote_button_height"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/btn_fanspeed"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/FanRemoteButton"
+            app:layout_columnWeight="1"
             android:text="Speed" />
 
         <Button
             android:id="@+id/btn_wind_mode"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/FanRemoteButton"
+            app:layout_columnWeight="1"
             android:text="Wind Mode" />
-    </LinearLayout>
+
+    </androidx.gridlayout.widget.GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

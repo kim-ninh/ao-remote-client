@@ -45,4 +45,16 @@
         <item name="android:layout_height">@dimen/two_col_button_size</item>
     </style>
 
+    <style name="ACRemoteButton" parent="MyButton">
+        <item name="android:layout_height">@dimen/ac_remote_button_size</item>
+    </style>
+
+    <style name="FanRemoteButton" parent="MyButton">
+        <item name="android:layout_height">@dimen/fan_remote_button_height</item>
+    </style>
+
+    <style name="TVRemoteTopButton" parent="MyButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/tv_remote_top_button_height</item>
+    </style>
 </resources>

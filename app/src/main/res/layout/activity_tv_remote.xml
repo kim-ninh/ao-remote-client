@@ -5,72 +5,58 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/topButtons"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/tv_remote_top_button_height"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:columnCount="3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:useDefaultMargins="true">
 
         <Button
             android:id="@+id/btn_power"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/TVRemoteTopButton"
+            app:layout_columnWeight="1"
             android:drawableTop="@drawable/round_power_settings_new_black_24dp"
             android:text="@string/power" />
 
         <Button
             android:id="@+id/btn_input_source"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/TVRemoteTopButton"
+            app:layout_columnWeight="1"
             android:drawableTop="@drawable/round_featured_video_black_24dp"
             android:text="@string/input_source" />
 
         <Button
             android:id="@+id/btn_home"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/TVRemoteTopButton"
+            android:text="@string/home"
             android:drawableTop="@drawable/round_home_black_24dp"
-            android:text="@string/home" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/tv_remote_top_button_height"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            app:layout_columnWeight="1" />
 
         <Button
             android:id="@+id/btn_menu"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/TVRemoteTopButton"
+            app:layout_columnWeight="1"
             android:drawableTop="@drawable/round_menu_black_24dp"
             android:text="@string/menu" />
 
         <Button
             android:id="@+id/btn_numeric_buttons"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/TVRemoteTopButton"
+            app:layout_columnWeight="1"
             android:drawableTop="@drawable/round_dialpad_black_24dp"
             android:text="@string/numeric_buttons" />
 
         <Button
             android:id="@+id/btn_back"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/TVRemoteTopButton"
+            app:layout_columnWeight="1"
             android:drawableTop="@drawable/round_reply_black_24dp"
             android:text="@string/back" />
+    </androidx.gridlayout.widget.GridLayout>
 
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -80,7 +66,7 @@
         android:layout_weight="1"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@id/topButtons">
 
         <ImageButton
             android:id="@+id/btn_channel_up"
@@ -108,7 +94,7 @@
         android:layout_marginEnd="32dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@id/topButtons">
 
         <ImageButton
             android:id="@+id/btn_volume_up"
