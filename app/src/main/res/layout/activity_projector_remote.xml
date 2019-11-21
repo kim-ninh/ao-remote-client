@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.gridlayout.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    app:columnCount="3"
+    app:rowCount="3">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp">
+        android:layout_margin="16dp"
+        app:layout_columnSpan="3"
+        app:layout_gravity="center_horizontal">
 
         <Button
             android:id="@+id/btnOK"
@@ -60,62 +62,51 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <Button
+        android:id="@+id/btn_power"
+        style="@style/MyButton"
         android:layout_height="@dimen/projector_remote_button_size"
-        android:orientation="horizontal">
+        android:drawableTop="@drawable/round_power_settings_new_black_24dp"
+        android:text="@string/power"
+        app:layout_columnWeight="1" />
 
-        <Button
-            android:id="@+id/btn_power"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/round_power_settings_new_black_24dp"
-            android:text="@string/power" />
-
-        <Button
-            android:id="@+id/btn_menu"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/round_menu_black_24dp"
-            android:text="@string/menu" />
-
-        <Button
-            android:id="@+id/btn_back"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/round_reply_black_24dp"
-            android:text="@string/back" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btn_menu"
+        style="@style/MyButton"
         android:layout_height="@dimen/projector_remote_button_size"
-        android:orientation="horizontal">
+        android:drawableTop="@drawable/round_menu_black_24dp"
+        android:text="@string/menu"
+        app:layout_columnWeight="1" />
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/volume" />
+    <Button
+        android:id="@+id/btn_back"
+        style="@style/MyButton"
+        android:layout_height="@dimen/projector_remote_button_size"
+        android:drawableTop="@drawable/round_reply_black_24dp"
+        android:text="@string/back"
+        app:layout_columnWeight="1" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/round_remove_black_24dp" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_height="@dimen/projector_remote_button_size"
+        android:gravity="center"
+        android:text="@string/volume"
+        app:layout_columnWeight="1" />
 
-        <ImageButton
-            android:id="@+id/imageButton2"
-            style="@style/MyButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/round_add_black_24dp" />
+    <ImageButton
+        android:id="@+id/imageButton"
+        style="@style/MyButton"
+        android:layout_height="@dimen/projector_remote_button_size"
+        app:layout_columnWeight="1"
+        app:srcCompat="@drawable/round_remove_black_24dp" />
 
-    </LinearLayout>
-</LinearLayout>
+    <ImageButton
+        android:id="@+id/imageButton2"
+        style="@style/MyButton"
+        android:layout_height="@dimen/projector_remote_button_size"
+        app:layout_columnWeight="1"
+        app:srcCompat="@drawable/round_add_black_24dp" />
+
+
+</androidx.gridlayout.widget.GridLayout>

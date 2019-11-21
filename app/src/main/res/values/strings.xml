@@ -27,4 +27,5 @@
     <string name="tv_box">TV Box</string>
     <string name="add_device">Add Device</string>
     <string name="empty_devices_list_info">No device add yet.\nAdd new device to begin</string>
+    <string name="view_not_find_error">Not implement yet!</string>
 </resources>

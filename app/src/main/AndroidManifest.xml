@@ -11,6 +11,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PickDeviceTypeActivity"></activity>
         <activity android:name=".RemoteControlActivity" />
+        <activity android:name=".TvRemoteActivity" />
+        <activity android:name=".FanRemoteActivity" />
+        <activity android:name=".AcRemoteActivity" />
+        <activity android:name=".ProjectorRemoteActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">

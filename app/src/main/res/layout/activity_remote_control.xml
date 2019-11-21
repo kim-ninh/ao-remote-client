@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".RemoteControlActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/view_not_find_error" />
 </FrameLayout>
