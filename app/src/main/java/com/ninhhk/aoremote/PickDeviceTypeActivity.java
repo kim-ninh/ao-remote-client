@@ -66,7 +66,7 @@ public class PickDeviceTypeActivity extends AppCompatActivity implements View.On
             String strTag = (String) tag;
             Class<?> destActivityClass = ActivityClassFactory.with(getResources()).get(strTag);
             Intent intent = new Intent(this, destActivityClass);
-            startActivity(intent);
+//            startActivity(intent);
         }
     }
 }

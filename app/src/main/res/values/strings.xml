@@ -28,4 +28,15 @@
     <string name="add_device">Add Device</string>
     <string name="empty_devices_list_info">No device add yet.\nAdd new device to begin</string>
     <string name="view_not_find_error">Not implement yet!</string>
+    <string name="remoteId">remote id</string>
+    <string name="channel_up">Channel Up</string>
+    <string name="channel_down">Channel Down</string>
+    <string name="volume_up">Volume Up</string>
+    <string name="volume_down">Volume Down</string>
+    <string name="up">Up</string>
+    <string name="down">Down</string>
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+
+    <item name="ir_data" type="id" />
 </resources>

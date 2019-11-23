@@ -35,6 +35,6 @@ class ActivityClassFactory {
 
         }
 
-        return RemoteControlActivity.class;
+        return NotImplementRemoteControlActivity.class;
     }
 }

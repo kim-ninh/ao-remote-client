@@ -15,6 +15,7 @@
         <activity android:name=".FanRemoteActivity" />
         <activity android:name=".AcRemoteActivity" />
         <activity android:name=".ProjectorRemoteActivity" />
+        <activity android:name=".NotImplementRemoteControlActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
