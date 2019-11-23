@@ -21,7 +21,6 @@ public class RemoteControlActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        RemoteManager remoteManager = RemoteManager.get(this);
     }
 
 

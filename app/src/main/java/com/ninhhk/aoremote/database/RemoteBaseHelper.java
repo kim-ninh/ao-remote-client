@@ -71,7 +71,7 @@ public class RemoteBaseHelper extends SQLiteOpenHelper {
         db.insert(BrandTable.NAME, null, brandTableRow);
 
         ContentValues typeTableRow = new ContentValues();
-        typeTableRow.put(TypeTable.NAME, "TV");
+        typeTableRow.put(TypeTable.Cols.NAME, "TV");
         db.insert(TypeTable.NAME, null, typeTableRow);
 
         ContentValues remoteTableRow = new ContentValues();

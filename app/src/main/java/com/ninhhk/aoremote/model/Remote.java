@@ -1,7 +1,10 @@
 package com.ninhhk.aoremote.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class Remote {
     private long id;
@@ -10,7 +13,9 @@ public class Remote {
     private String brand;
     private String deviceType;
     private HashMap<String, byte[]> buttonsCode = new HashMap<>();
+    private List<RemoteButton> buttonList = new ArrayList<>();
 
+    // for retrieve data from Remote table
     public Remote(long id, String name, int isTemplate, String brand, String deviceType) {
         this.id = id;
         this.name = name;
@@ -19,12 +24,17 @@ public class Remote {
         this.deviceType = deviceType;
     }
 
+    // for insert new remote to Remote table
+    public Remote(String name, int isTemplate, String brand, String deviceType) {
+        this(-1, name, isTemplate, brand, deviceType);
+    }
 
     public void initButtons(List<RemoteButton> remoteButtons) {
         for (RemoteButton button :
                 remoteButtons) {
             buttonsCode.put(button.getName(), button.getCode());
         }
+        buttonList = remoteButtons;
     }
 
     public long getId() {
@@ -69,5 +79,17 @@ public class Remote {
 
     public byte[] getButtonCode(String buttonName) {
         return buttonsCode.get(buttonName);
+    }
+
+    public void updateButton(String name, byte[] code) {
+        buttonsCode.put(name, code);
+    }
+
+    public Iterator<Map.Entry<String, byte[]>> getButtonsIterator() {
+        return buttonsCode.entrySet().iterator();
+    }
+
+    public List<RemoteButton> getButtonList() {
+        return buttonList;
     }
 }

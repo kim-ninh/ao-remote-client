@@ -5,20 +5,21 @@ public class RemoteButton {
     private long id;
     private String name;
     private byte[] code;
+    private long remote;
 
-    public RemoteButton(String name, byte[] code) {
-        this(-1, name, code);
-    }
-
-    public RemoteButton() {
-        this(-1, null, null);
-    }
-
-    public RemoteButton(long id, String name, byte[] code) {
+    // for retrieve data from Button table
+    public RemoteButton(long id, String name, byte[] code, long remote) {
         this.id = id;
         this.name = name;
         this.code = code;
+        this.remote = remote;
     }
+
+    // For insert new Button to Button table
+    public RemoteButton(String name, byte[] code, long remote) {
+        this(-1, name, code, remote);
+    }
+
 
     public long getId() {
         return id;
@@ -42,5 +43,13 @@ public class RemoteButton {
 
     public void setCode(byte[] code) {
         this.code = code;
+    }
+
+    public long getRemote() {
+        return remote;
+    }
+
+    public void setRemote(long remote) {
+        this.remote = remote;
     }
 }
