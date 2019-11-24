@@ -86,7 +86,7 @@ public abstract class RemoteControlActivity extends AppCompatActivity
         Object tag = v.getTag(R.id.ir_data);
         if (tag instanceof byte[]) {
             byte[] IR_code = (byte[]) tag;
-            String str_IR_code = new String(IR_code);
+            String str_IR_code = ByteArrayUtils.toHex(IR_code);
             Log.i(TAG, "onClick: " + v.getTag() + " : " + str_IR_code);
         }
     }

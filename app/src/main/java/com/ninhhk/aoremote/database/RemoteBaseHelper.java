@@ -82,7 +82,7 @@ public class RemoteBaseHelper extends SQLiteOpenHelper {
 
         ContentValues buttonTableRow = new ContentValues();
         buttonTableRow.put(ButtonTable.Cols.NAME, "Menu");
-        buttonTableRow.put(ButtonTable.Cols.CODE, new byte[]{1, 2, 3, 4});
+        buttonTableRow.put(ButtonTable.Cols.CODE, new byte[]{-128, -127, -2, -1, 0, 1, 2, 3});
         buttonTableRow.put(ButtonTable.Cols.REMOTE, remoteId);
         db.insert(ButtonTable.NAME, null, buttonTableRow);
     }
