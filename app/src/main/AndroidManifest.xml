@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PickDeviceTypeActivity"></activity>
+        <activity android:name=".EditRemoteActivity"></activity>
+        <activity android:name=".NoModelCompactActivity" />
+        <activity android:name=".TestRemoteActivity" />
+        <activity android:name=".RemoteBrandListActivity" />
+        <activity android:name=".PickDeviceTypeActivity" />
         <activity android:name=".RemoteControlActivity" />
         <activity android:name=".TvRemoteActivity" />
         <activity android:name=".FanRemoteActivity" />

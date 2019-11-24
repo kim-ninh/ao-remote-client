@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.List;
+
 import static com.ninhhk.aoremote.database.IRRemoteDbSchema.BrandTable;
 import static com.ninhhk.aoremote.database.IRRemoteDbSchema.ButtonTable;
 import static com.ninhhk.aoremote.database.IRRemoteDbSchema.RemoteTable;
@@ -50,10 +52,16 @@ public class RemoteBaseHelper extends SQLiteOpenHelper {
                     "REFERENCES " + RemoteTable.NAME + " (" + RemoteTable.Cols._ID + " ))";
     private static final int VERSION = 1;
     private static final String DATABASE_NAME = "RemoteBase.db";
+    private static List<String> DEFAULT_DATA;
 
 
     public RemoteBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
+    }
+
+    public RemoteBaseHelper(Context context, List<String> defaultDataSql) {
+        super(context, DATABASE_NAME, null, VERSION);
+        DEFAULT_DATA = defaultDataSql;
     }
 
     @Override
@@ -62,7 +70,12 @@ public class RemoteBaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_TABLE_TYPE);
         db.execSQL(SQL_CREATE_TABLE_REMOTE);
         db.execSQL(SQL_CREATE_TABLE_BUTTON);
-        insertDefaultData(db);
+//        insertDefaultData(db);
+
+        for (String sql : DEFAULT_DATA) {
+            db.execSQL(sql);
+        }
+
     }
 
     private void insertDefaultData(SQLiteDatabase db) {

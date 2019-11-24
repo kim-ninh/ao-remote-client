@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,9 @@ public class PickDeviceTypeActivity extends AppCompatActivity implements View.On
     private Button btn_ac;
     private Button btn_projector;
     private Button btn_tv_box;
+
+    private RadioButton rd_btn_from_template;
+    private RadioButton rd_btn_manual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,9 @@ public class PickDeviceTypeActivity extends AppCompatActivity implements View.On
         btn_ac = findViewById(R.id.btn_ac);
         btn_projector = findViewById(R.id.btn_projector);
         btn_tv_box = findViewById(R.id.btn_tv_box);
+
+        rd_btn_from_template = findViewById(R.id.rd_btn_from_template);
+        rd_btn_manual = findViewById(R.id.rd_btn_manual);
 
         btn_tv.setOnClickListener(this);
         btn_fan.setOnClickListener(this);
@@ -63,10 +70,17 @@ public class PickDeviceTypeActivity extends AppCompatActivity implements View.On
 
         Object tag = v.getTag();
         if (tag instanceof String) {
-            String strTag = (String) tag;
-            Class<?> destActivityClass = ActivityClassFactory.with(getResources()).get(strTag);
-            Intent intent = new Intent(this, destActivityClass);
-//            startActivity(intent);
+            String remote_type = (String) tag;
+
+            if (rd_btn_from_template.isChecked()) {
+
+                Intent intent = new Intent(this, RemoteBrandListActivity.class);
+                intent.putExtra(getString(R.string.remote_type), remote_type);
+                startActivity(intent);
+
+            } else if (rd_btn_manual.isChecked()) {
+                //TODO: start RemoteLearningActivity
+            }
         }
     }
 }

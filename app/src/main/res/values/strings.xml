@@ -37,6 +37,13 @@
     <string name="down">Down</string>
     <string name="left">Left</string>
     <string name="right">Right</string>
+    <string name="from_template">From template</string>
+    <string name="manual">Manual</string>
+    <string name="remote_type">remote type</string>
+    <string name="brand_name">brand name</string>
+    <string name="rename_device">Rename device</string>
+    <string name="device_name">Device name</string>
+    <string name="save">Save</string>
 
     <item name="ir_data" type="id" />
 </resources>

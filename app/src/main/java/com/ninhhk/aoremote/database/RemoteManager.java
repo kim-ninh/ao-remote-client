@@ -7,9 +7,12 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
+import com.ninhhk.aoremote.InputStreamUtils;
+import com.ninhhk.aoremote.R;
 import com.ninhhk.aoremote.model.Remote;
 import com.ninhhk.aoremote.model.RemoteButton;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -26,7 +29,11 @@ public class RemoteManager {
 
     private RemoteManager(Context context) {
         this.context = context;
-        this.mDatabase = new RemoteBaseHelper(context).getWritableDatabase();
+
+        InputStream is = context.getResources().openRawResource(R.raw.default_data);
+        List<String> data = InputStreamUtils.getString(is);
+
+        this.mDatabase = new RemoteBaseHelper(context, data).getWritableDatabase();
     }
 
     public static RemoteManager get(Context context) {
@@ -45,7 +52,7 @@ public class RemoteManager {
 
         String whereClause = RemoteTable.Cols.TYPE + " = ?";
 
-        RemoteCursorWrapper cursor = queryRemotes(whereClause, new String[]{deviceType});
+        RemoteCursorWrapper cursor = queryBrands(whereClause, new String[]{deviceType});
         try {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
@@ -56,14 +63,29 @@ public class RemoteManager {
             cursor.close();
         }
 
-        return (String[]) brands.toArray();
+        return brands.toArray(new String[0]);
     }
 
     public List<Remote> getUserRemotes() {
-        List<Remote> remotes = new ArrayList<>();
-
         String whereClause = RemoteTable.Cols.IS_TEMPLATE + " = ?";
-        RemoteCursorWrapper cursor = queryRemotes(whereClause, new String[]{"0"});
+        String[] whereArgs = {"0"};
+
+        return getRemotes(whereClause, whereArgs);
+    }
+
+    public List<Remote> getTemplateRemotes(String remote_type, String brandName) {
+        String whereClause = RemoteTable.Cols.TYPE + " = ? AND " +
+                RemoteTable.Cols.BRAND + " = ? AND " +
+                RemoteTable.Cols.IS_TEMPLATE + " = ? ";
+
+        String[] whereArgs = {remote_type, brandName, "1"};
+
+        return getRemotes(whereClause, whereArgs);
+    }
+
+    public List<Remote> getRemotes(String whereClause, String[] whereArgs) {
+        List<Remote> remotes = new ArrayList<>();
+        RemoteCursorWrapper cursor = queryRemotes(whereClause, whereArgs);
 
         try {
             cursor.moveToFirst();
@@ -224,4 +246,20 @@ public class RemoteManager {
         return new ButtonCursorWrapper(cursor);
     }
 
+    private RemoteCursorWrapper queryBrands(@Nullable String whereClause, @Nullable String[] whereArgs) {
+        String[] columns = {RemoteTable.Cols.BRAND};
+
+        Cursor cursor = mDatabase.query(
+                true,
+                RemoteTable.NAME,
+                columns,
+                whereClause,
+                whereArgs,
+                null,
+                null,
+                null,
+                null
+        );
+        return new RemoteCursorWrapper(cursor);
+    }
 }
