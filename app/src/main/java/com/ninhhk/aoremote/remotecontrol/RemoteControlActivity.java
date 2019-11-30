@@ -1,4 +1,4 @@
-package com.ninhhk.aoremote;
+package com.ninhhk.aoremote.remotecontrol;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ninhhk.aoremote.ByteArrayUtils;
+import com.ninhhk.aoremote.R;
 import com.ninhhk.aoremote.database.RemoteManager;
 import com.ninhhk.aoremote.model.Remote;
 

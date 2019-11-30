@@ -1,8 +1,10 @@
-package com.ninhhk.aoremote;
+package com.ninhhk.aoremote.remotecontrol;
 
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.ninhhk.aoremote.R;
 
 public class TvRemoteActivity extends RemoteControlActivity {
 

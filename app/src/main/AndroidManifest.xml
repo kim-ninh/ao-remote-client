@@ -14,11 +14,11 @@
         <activity android:name=".TestRemoteActivity" />
         <activity android:name=".RemoteBrandListActivity" />
         <activity android:name=".PickDeviceTypeActivity" />
-        <activity android:name=".RemoteControlActivity" />
-        <activity android:name=".TvRemoteActivity" />
-        <activity android:name=".FanRemoteActivity" />
-        <activity android:name=".AcRemoteActivity" />
-        <activity android:name=".ProjectorRemoteActivity" />
+        <activity android:name=".remotecontrol.RemoteControlActivity" />
+        <activity android:name=".remotecontrol.TvRemoteActivity" />
+        <activity android:name=".remotecontrol.FanRemoteActivity" />
+        <activity android:name=".remotecontrol.AcRemoteActivity" />
+        <activity android:name=".remotecontrol.ProjectorRemoteActivity" />
         <activity android:name=".NotImplementRemoteControlActivity" />
         <activity
             android:name=".SplashActivity"

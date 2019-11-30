@@ -1,4 +1,6 @@
-package com.ninhhk.aoremote;
+package com.ninhhk.aoremote.remotecontrol;
+
+import com.ninhhk.aoremote.R;
 
 public class ProjectorRemoteActivity extends RemoteControlActivity {
 

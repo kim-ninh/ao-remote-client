@@ -1,5 +1,7 @@
 package com.ninhhk.aoremote;
 
+import com.ninhhk.aoremote.remotecontrol.RemoteControlActivity;
+
 public class NotImplementRemoteControlActivity extends RemoteControlActivity {
 
     public NotImplementRemoteControlActivity() {

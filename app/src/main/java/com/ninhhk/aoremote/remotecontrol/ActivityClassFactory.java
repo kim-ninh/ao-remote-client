@@ -1,8 +1,11 @@
-package com.ninhhk.aoremote;
+package com.ninhhk.aoremote.remotecontrol;
 
 import android.content.res.Resources;
 
-class ActivityClassFactory {
+import com.ninhhk.aoremote.NotImplementRemoteControlActivity;
+import com.ninhhk.aoremote.R;
+
+public class ActivityClassFactory {
 
     private final Resources resource;
 

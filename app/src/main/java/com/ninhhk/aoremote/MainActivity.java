@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ninhhk.aoremote.database.RemoteManager;
 import com.ninhhk.aoremote.model.Remote;
+import com.ninhhk.aoremote.remotecontrol.ActivityClassFactory;
 
 import java.util.ArrayList;
 import java.util.List;
