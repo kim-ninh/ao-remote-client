@@ -28,6 +28,7 @@ public class TestRemoteActivity extends AppCompatActivity implements View.OnClic
 
     private List<Remote> templateRemotes;
     private int currentIndex = 0;
+    private Command command = new TestCommand();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,18 @@ public class TestRemoteActivity extends AppCompatActivity implements View.OnClic
 
         new LoadRemoteFromTemplateTask(TestRemoteActivity.this)
                 .execute(remote_type, brand_name);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        command.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        command.end();
     }
 
     private void initView() {
@@ -70,8 +83,7 @@ public class TestRemoteActivity extends AppCompatActivity implements View.OnClic
             if (tag instanceof byte[]) {
                 byte[] ir_code = (byte[]) tag;
 
-                // TODO: send byte[] to ESP
-
+                command.send(ir_code);
             }
         }
 
@@ -100,6 +112,8 @@ public class TestRemoteActivity extends AppCompatActivity implements View.OnClic
             long templateRemoteId = templateRemotes.get(currentIndex - 1).getId();
             new CloneTemplateRemoteTask(TestRemoteActivity.this)
                     .execute(templateRemoteId);
+
+            command.end();
         }
     }
 

@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ninhhk.aoremote.ByteArrayUtils;
+import com.ninhhk.aoremote.Command;
 import com.ninhhk.aoremote.R;
 import com.ninhhk.aoremote.database.RemoteManager;
 import com.ninhhk.aoremote.model.Remote;
@@ -31,6 +32,7 @@ public abstract class RemoteControlActivity extends AppCompatActivity
     protected Set<View> viewSet = new HashSet<>();
     protected @LayoutRes
     int layoutResId;
+    private Command command = new ControlCommand();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -61,8 +63,14 @@ public abstract class RemoteControlActivity extends AppCompatActivity
             new LoadRemoteTask(RemoteControlActivity.this)
                     .execute(remoteId);
         }
+        command.start();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        command.end();
+    }
 
     private void setIRDataCode() {
         Iterator<View> iterator = viewSet.iterator();
@@ -90,6 +98,7 @@ public abstract class RemoteControlActivity extends AppCompatActivity
             byte[] IR_code = (byte[]) tag;
             String str_IR_code = ByteArrayUtils.toHex(IR_code);
             Log.i(TAG, "onClick: " + v.getTag() + " : " + str_IR_code);
+            command.send(IR_code);
         }
     }
 
