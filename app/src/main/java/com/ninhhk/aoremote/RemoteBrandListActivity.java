@@ -5,13 +5,12 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ninhhk.aoremote.database.RemoteManager;
 
-public class RemoteBrandListActivity extends AppCompatActivity
+public class RemoteBrandListActivity extends BackableActivity
         implements BrandAdapter.OnBrandItemClickListenter {
 
     private RecyclerView rcv_remote_brand;
@@ -27,6 +26,8 @@ public class RemoteBrandListActivity extends AppCompatActivity
 
 
         String remote_type = getIntent().getStringExtra(getString(R.string.remote_type));
+        String appTitle = String.format("Select %s", remote_type);
+        getSupportActionBar().setTitle(appTitle);
         new QueryRemoteBrandTask(RemoteBrandListActivity.this)
                 .execute(remote_type);
     }

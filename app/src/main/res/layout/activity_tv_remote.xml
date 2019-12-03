@@ -19,31 +19,31 @@
             style="@style/TVRemoteTopButton"
             app:layout_columnWeight="1"
             android:drawableTop="@drawable/round_power_settings_new_black_24dp"
-            android:tag="@string/power"
+            android:tag="@string/tv_power"
             android:text="@string/power" />
 
         <Button
             android:id="@+id/btn_input_source"
             style="@style/TVRemoteTopButton"
             app:layout_columnWeight="1"
-            android:drawableTop="@drawable/round_featured_video_black_24dp"
-            android:tag="@string/input_source"
+            android:drawableTop="@drawable/ic_featured_video"
+            android:tag="@string/tv_input_source"
             android:text="@string/input_source" />
 
         <Button
             android:id="@+id/btn_home"
             style="@style/TVRemoteTopButton"
             android:text="@string/home"
-            android:tag="@string/home"
-            android:drawableTop="@drawable/round_home_black_24dp"
+            android:drawableTop="@drawable/ic_home"
+            android:tag="@string/tv_home"
             app:layout_columnWeight="1" />
 
         <Button
             android:id="@+id/btn_menu"
             style="@style/TVRemoteTopButton"
             app:layout_columnWeight="1"
-            android:drawableTop="@drawable/round_menu_black_24dp"
-            android:tag="@string/menu"
+            android:drawableTop="@drawable/ic_menu"
+            android:tag="@string/tv_menu"
             android:text="@string/menu" />
 
         <Button
@@ -57,8 +57,8 @@
             android:id="@+id/btn_back"
             style="@style/TVRemoteTopButton"
             app:layout_columnWeight="1"
-            android:drawableTop="@drawable/round_reply_black_24dp"
-            android:tag="@string/back"
+            android:drawableTop="@drawable/ic_reply"
+            android:tag="@string/tv_back"
             android:text="@string/back" />
     </androidx.gridlayout.widget.GridLayout>
 
@@ -76,7 +76,7 @@
         <ImageButton
             android:id="@+id/btn_channel_up"
             style="@style/VerticalButton"
-            android:tag="@string/channel_up"
+            android:tag="@string/tv_channel_up"
             app:srcCompat="@drawable/round_expand_less_black_24dp" />
 
         <TextView
@@ -88,7 +88,7 @@
         <ImageButton
             android:id="@+id/btn_channel_down"
             style="@style/VerticalButton"
-            android:tag="@string/channel_down"
+            android:tag="@string/tv_channel_down"
             app:srcCompat="@drawable/round_expand_more_black_24dp" />
     </LinearLayout>
 
@@ -105,7 +105,7 @@
         <ImageButton
             android:id="@+id/btn_volume_up"
             style="@style/VerticalButton"
-            android:tag="@string/volume_up"
+            android:tag="@string/tv_volume_up"
             app:srcCompat="@drawable/round_add_black_24dp" />
 
         <TextView
@@ -117,7 +117,7 @@
         <ImageButton
             android:id="@+id/btn_volume_down"
             style="@style/VerticalButton"
-            android:tag="@string/volume_down"
+            android:tag="@string/tv_volume_down"
             app:srcCompat="@drawable/round_remove_black_24dp" />
 
     </LinearLayout>
@@ -135,7 +135,7 @@
         <ImageButton
             android:id="@+id/btn_mute"
             style="@style/CircleButton"
-            android:tag="@string/mute"
+            android:tag="@string/tv_mute_toggle"
             app:srcCompat="@drawable/round_volume_mute_black_24dp" />
 
         <TextView
@@ -168,7 +168,7 @@
         <ImageButton
             android:id="@+id/btn_up"
             style="@style/CentralButton"
-            android:tag="@string/up"
+            android:tag="@string/tv_cursor_up"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -177,7 +177,7 @@
         <ImageButton
             android:id="@+id/btn_down"
             style="@style/CentralButton"
-            android:tag="@string/down"
+            android:tag="@string/tv_cursor_down"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/btn_up"
             app:layout_constraintTop_toBottomOf="@id/btn_OK"
@@ -186,7 +186,7 @@
         <ImageButton
             android:id="@+id/btn_left"
             style="@style/CentralButton"
-            android:tag="@string/left"
+            android:tag="@string/tv_cursor_left"
             app:layout_constraintBottom_toBottomOf="@+id/btn_OK"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_up"
@@ -195,7 +195,7 @@
         <ImageButton
             android:id="@+id/btn_right"
             style="@style/CentralButton"
-            android:tag="@string/right"
+            android:tag="@string/tv_cursor_right"
             app:layout_constraintBottom_toBottomOf="@+id/btn_OK"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/btn_OK"
@@ -223,7 +223,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/more" />
+            android:text="@string/tv_more" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

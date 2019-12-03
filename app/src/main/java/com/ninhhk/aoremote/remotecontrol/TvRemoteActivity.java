@@ -28,7 +28,7 @@ public class TvRemoteActivity extends RemoteControlActivity {
         viewSet.add(findViewById(R.id.btn_channel_down));
 
         viewSet.add(findViewById(R.id.btn_volume_up));
-        viewSet.add(findViewById(R.id.btn_channel_down));
+        viewSet.add(findViewById(R.id.btn_volume_down));
 
         viewSet.add(findViewById(R.id.btn_OK));
         viewSet.add(findViewById(R.id.btn_up));

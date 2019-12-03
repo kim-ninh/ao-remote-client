@@ -44,7 +44,7 @@ public class RemoteBaseHelper extends SQLiteOpenHelper {
 
                     ButtonTable.Cols.NAME + " TEXT, " +
 
-                    ButtonTable.Cols.CODE + " BLOB, " +
+                    ButtonTable.Cols.CODE + " TEXT, " +
 
                     ButtonTable.Cols.REMOTE + " INTEGER, " +
 

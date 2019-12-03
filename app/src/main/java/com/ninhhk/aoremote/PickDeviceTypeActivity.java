@@ -2,15 +2,11 @@ package com.ninhhk.aoremote;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-public class PickDeviceTypeActivity extends AppCompatActivity implements View.OnClickListener {
+public class PickDeviceTypeActivity extends BackableActivity implements View.OnClickListener {
 
     private static final int ADD_REQUEST_CODE = 1234;
     private Button btn_tv;
@@ -27,7 +23,7 @@ public class PickDeviceTypeActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_device_type);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(getString(R.string.select_device_type));
         initView();
         setButtonTag();
     }
@@ -57,13 +53,6 @@ public class PickDeviceTypeActivity extends AppCompatActivity implements View.On
         btn_tv_box.setTag(getString(R.string.tv_box));
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-        }
-        return true;
-    }
 
     @Override
     public void onClick(View v) {

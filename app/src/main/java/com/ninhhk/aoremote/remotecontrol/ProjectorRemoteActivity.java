@@ -4,7 +4,7 @@ import com.ninhhk.aoremote.R;
 
 public class ProjectorRemoteActivity extends RemoteControlActivity {
 
-    ProjectorRemoteActivity() {
+    public ProjectorRemoteActivity() {
         layoutResId = R.layout.activity_projector_remote;
     }
 

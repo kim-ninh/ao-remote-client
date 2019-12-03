@@ -12,7 +12,7 @@ public class Remote {
     private int isTemplate;
     private String brand;
     private String deviceType;
-    private HashMap<String, byte[]> buttonsCode = new HashMap<>();
+    private HashMap<String, String> buttonsCode = new HashMap<>();
     private List<RemoteButton> buttonList = new ArrayList<>();
 
     // for retrieve data from Remote table
@@ -77,19 +77,23 @@ public class Remote {
         this.deviceType = deviceType;
     }
 
-    public byte[] getButtonCode(String buttonName) {
+    public String getButtonCode(String buttonName) {
         return buttonsCode.get(buttonName);
     }
 
-    public void updateButton(String name, byte[] code) {
+    public void updateButton(String name, String code) {
         buttonsCode.put(name, code);
     }
 
-    public Iterator<Map.Entry<String, byte[]>> getButtonsIterator() {
+    public Iterator<Map.Entry<String, String>> getButtonsIterator() {
         return buttonsCode.entrySet().iterator();
     }
 
     public List<RemoteButton> getButtonList() {
         return buttonList;
+    }
+
+    public boolean hasButton(String name) {
+        return buttonsCode.containsKey(name);
     }
 }

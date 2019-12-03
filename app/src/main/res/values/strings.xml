@@ -45,5 +45,55 @@
     <string name="device_name">Device name</string>
     <string name="save">Save</string>
 
+    <string name="remote_power_test">Power Toggle</string>
+    <string name="select_device_type">Select device type</string>
+
+    <!--    TV remote button tag -->
+    <string name="tv_power">Power Toggle</string>
+    <string name="tv_input_source">Input Source</string>
+    <string name="tv_home">Home</string>
+    <string name="tv_menu">Menu</string>
+    <string name="tv_numeric">Numeric</string>
+    <string name="tv_back">Back</string>
+    <string name="tv_channel_up">Channel Up</string>
+    <string name="tv_channel_down">Channel Down</string>
+    <string name="tv_volume_up">Volume Up</string>
+    <string name="tv_volume_down">Volume Down</string>
+    <string name="tv_mute_toggle">Mute Toggle</string>
+    <string name="tv_cursor_up">Cursor Up</string>
+    <string name="tv_cursor_down">Cursor Down</string>
+    <string name="tv_cursor_left">Cursor Left</string>
+    <string name="tv_cursor_right">Cursor Right</string>
+    <string name="tv_ok">OK</string>
+    <string name="tv_more">More</string>
+
+    <!--    AC remote button tag -->
+    <string name="ac_power">Power Toggle</string>
+    <string name="ac_mode">Mode</string>
+    <string name="ac_speed">Speed</string>
+    <string name="ac_direction">Direction</string>
+    <string name="ac_swing">Swing</string>
+    <string name="ac_temp_up">Temp Up</string>
+    <string name="ac_temp_down">Temp Down</string>
+    <string name="ac_timer">Timer</string>
+    <string name="ac_sleep">Sleep</string>
+    <string name="ac_more">More</string>
+
+    <!--    Fan remote button tag  -->
+    <string name="fan_power">Power</string>
+    <string name="fan_timer">Timer</string>
+    <string name="fan_speed">Speed</string>
+    <string name="fan_wind_mode">Wind Mode</string>
+
+    <!--    Projector button tag -->
+    <string name="projector_ok">OK</string>
+    <string name="projector_cursor_up">Cursor Up</string>
+    <string name="projector_cursor_down">Cursor Down</string>
+    <string name="projector_cursor_left">Cursor Left</string>
+    <string name="projector_cursor_right">Cursor Right</string>
+    <string name="projector_power">Power Toggle</string>
+    <string name="projector_back">Back</string>
+
+    <!--    Tv box tag -->
     <item name="ir_data" type="id" />
 </resources>

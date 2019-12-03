@@ -75,7 +75,7 @@
         android:id="@+id/btn_menu"
         style="@style/MyButton"
         android:layout_height="@dimen/projector_remote_button_size"
-        android:drawableTop="@drawable/round_menu_black_24dp"
+        android:drawableTop="@drawable/ic_menu"
         android:text="@string/menu"
         app:layout_columnWeight="1" />
 
@@ -83,7 +83,7 @@
         android:id="@+id/btn_back"
         style="@style/MyButton"
         android:layout_height="@dimen/projector_remote_button_size"
-        android:drawableTop="@drawable/round_reply_black_24dp"
+        android:drawableTop="@drawable/ic_reply"
         android:text="@string/back"
         app:layout_columnWeight="1" />
 

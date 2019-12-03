@@ -20,7 +20,7 @@ public class ButtonCursorWrapper extends CursorWrapper {
 
         long id = getLong(getColumnIndex(ButtonTable.Cols._ID));
         String name = getString(getColumnIndex(ButtonTable.Cols.NAME));
-        byte[] code = getBlob(getColumnIndex(ButtonTable.Cols.CODE));
+        String code = getString(getColumnIndex(ButtonTable.Cols.CODE));
         long remote = getLong(getColumnIndex(ButtonTable.Cols.REMOTE));
         return new RemoteButton(id, name, code, remote);
     }

@@ -9,14 +9,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.ninhhk.aoremote.database.RemoteManager;
 import com.ninhhk.aoremote.model.Remote;
 
 import java.util.List;
 
-public class TestRemoteActivity extends AppCompatActivity implements View.OnClickListener {
+public class TestRemoteActivity extends BackableActivity implements View.OnClickListener {
 
     private TextView txt_model_count;
     private View view_popup_message;
@@ -39,7 +37,8 @@ public class TestRemoteActivity extends AppCompatActivity implements View.OnClic
 
         String brand_name = getIntent().getStringExtra(getString(R.string.brand_name));
         String remote_type = getIntent().getStringExtra(getString(R.string.remote_type));
-
+        String appTitle = String.format("Add %s remote", remote_type);
+        getSupportActionBar().setTitle(appTitle);
         new LoadRemoteFromTemplateTask(TestRemoteActivity.this)
                 .execute(remote_type, brand_name);
     }
@@ -151,8 +150,9 @@ public class TestRemoteActivity extends AppCompatActivity implements View.OnClic
         }
 
         Remote currentModel = templateRemotes.get(currentIndex - 1);
-        byte[] IR_code = currentModel.getButtonCode(getString(R.string.power));
-        btn_power.setTag(IR_code);
+        String IR_code = currentModel.getButtonCode(getString(R.string.remote_power_test));
+        byte[] bytes = IRUtils.prontoHexToBytes(IR_code);
+        btn_power.setTag(bytes);
 
         String str = String.format("Test buttons (%d/%d)", currentIndex, templateRemotes.size());
         txt_model_count.setText(str);

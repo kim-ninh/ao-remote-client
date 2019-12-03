@@ -8,12 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.ninhhk.aoremote.database.RemoteManager;
 import com.ninhhk.aoremote.model.Remote;
 
-public class EditRemoteActivity extends AppCompatActivity implements View.OnClickListener {
+public class EditRemoteActivity extends BackableActivity implements View.OnClickListener {
 
     private EditText edt_device_name;
     private Button btn_save;

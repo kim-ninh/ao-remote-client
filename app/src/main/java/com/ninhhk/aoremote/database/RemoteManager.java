@@ -7,12 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
-import com.ninhhk.aoremote.InputStreamUtils;
-import com.ninhhk.aoremote.R;
 import com.ninhhk.aoremote.model.Remote;
 import com.ninhhk.aoremote.model.RemoteButton;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -30,10 +27,7 @@ public class RemoteManager {
     private RemoteManager(Context context) {
         this.context = context;
 
-        InputStream is = context.getResources().openRawResource(R.raw.default_data);
-        List<String> data = InputStreamUtils.getString(is);
-
-        this.mDatabase = new RemoteBaseHelper(context, data).getWritableDatabase();
+        this.mDatabase = new RemoteDB(context).getWritableDatabase();
     }
 
     public static RemoteManager get(Context context) {
@@ -128,10 +122,10 @@ public class RemoteManager {
         remote.setIsTemplate(0);
         long newRemoteId = addRemote(remote);
 
-        Iterator<Map.Entry<String, byte[]>> buttonIterator = remote.getButtonsIterator();
+        Iterator<Map.Entry<String, String>> buttonIterator = remote.getButtonsIterator();
         while (buttonIterator.hasNext()) {
 
-            Map.Entry<String, byte[]> entry = buttonIterator.next();
+            Map.Entry<String, String> entry = buttonIterator.next();
             RemoteButton remoteButton = new RemoteButton(entry.getKey(), entry.getValue(), newRemoteId);
             addButton(remoteButton);
         }
