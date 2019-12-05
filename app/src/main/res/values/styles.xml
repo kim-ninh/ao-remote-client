@@ -21,6 +21,10 @@
         <item name="android:background">@drawable/button_background</item>
     </style>
 
+    <style name="BottomSheetButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+
+    </style>
+
     <style name="CircleButton" parent="AppTheme">
         <item name="android:layout_width">@dimen/circle_button_size</item>
         <item name="android:layout_height">@dimen/circle_button_size</item>
