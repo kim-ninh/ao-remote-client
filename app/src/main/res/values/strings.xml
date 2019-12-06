@@ -93,6 +93,10 @@
     <string name="projector_cursor_right">Cursor Right</string>
     <string name="projector_power">Power Toggle</string>
     <string name="projector_back">Back</string>
+    <string name="projector_more">More</string>
+    <string name="projector_menu">Menu</string>
+    <string name="projector_volume_up">Volume Up</string>
+    <string name="projector_volume_down">Volume Down</string>
 
     <!--    Tv box tag -->
     <item name="ir_data" type="id" />

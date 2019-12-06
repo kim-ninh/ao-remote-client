@@ -31,7 +31,7 @@
             style="@style/ACRemoteButton"
             android:text="@string/power"
             android:textColor="@color/red"
-
+            android:tag="@string/ac_power"
             app:layout_columnSpan="2"
             app:layout_columnWeight="1" />
 
@@ -39,34 +39,34 @@
             android:id="@+id/btn_mode"
             style="@style/ACRemoteButton"
             android:text="@string/mode"
-
+            android:tag="@string/ac_mode"
             app:layout_columnWeight="1" />
 
         <Button
             android:id="@+id/btn_speed"
             style="@style/ACRemoteButton"
-
+            android:tag="@string/ac_sleep"
             android:text="@string/speed"
             app:layout_columnWeight="1" />
 
         <Button
             android:id="@+id/btn_direction"
             style="@style/ACRemoteButton"
-
+            android:tag="@string/ac_direction"
             android:text="@string/direction"
             app:layout_columnWeight="1" />
 
         <Button
             android:id="@+id/btn_swing"
             style="@style/ACRemoteButton"
-
+            android:tag="@string/ac_swing"
             android:text="@string/swing"
             app:layout_columnWeight="1" />
 
         <ImageButton
             android:id="@+id/btn_temp_down"
             style="@style/ACRemoteButton"
-
+            android:tag="@string/ac_temp_down"
             app:layout_columnWeight="1"
             app:srcCompat="@drawable/round_remove_black_24dp" />
 
@@ -81,21 +81,21 @@
         <ImageButton
             android:id="@+id/btn_temp_up"
             style="@style/ACRemoteButton"
-
+            android:tag="@string/ac_temp_up"
             app:layout_columnWeight="1"
             app:srcCompat="@drawable/round_add_black_24dp" />
 
         <Button
             android:id="@+id/btn_timer"
             style="@style/ACRemoteButton"
-
+            android:tag="@string/ac_timer"
             android:text="@string/timer"
             app:layout_columnWeight="1" />
 
         <Button
             android:id="@+id/btn_sleep"
             style="@style/ACRemoteButton"
-
+            android:tag="@string/ac_sleep"
             android:text="@string/sleep"
             app:layout_columnWeight="1" />
 

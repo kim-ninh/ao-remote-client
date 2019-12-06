@@ -4,7 +4,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.ninhhk.aoremote.ExtraButtonDialog;
 import com.ninhhk.aoremote.R;
 
 public class TvRemoteActivity extends RemoteControlActivity {
@@ -58,11 +57,5 @@ public class TvRemoteActivity extends RemoteControlActivity {
                 showExtraButtonDialog();
             }
         });
-    }
-
-    private void showExtraButtonDialog() {
-
-        ExtraButtonDialog dialog = new ExtraButtonDialog(extraButton, this);
-        dialog.show(getSupportFragmentManager(), "Extra button");
     }
 }

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:columnCount="3"
-    app:rowCount="3">
+    app:rowCount="4">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
             style="@style/CircleButton"
             android:layout_width="@dimen/central_circle_button_size"
             android:layout_height="@dimen/central_circle_button_size"
-
+            android:tag="@string/projector_ok"
             android:text="@android:string/ok"
             app:layout_constraintStart_toEndOf="@id/btn_left"
             app:layout_constraintTop_toBottomOf="@id/btn_up" />
@@ -26,7 +26,7 @@
         <ImageButton
             android:id="@+id/btn_up"
             style="@style/CentralButton"
-
+            android:tag="@string/projector_cursor_up"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -35,7 +35,7 @@
         <ImageButton
             android:id="@+id/btn_down"
             style="@style/CentralButton"
-
+            android:tag="@string/projector_cursor_down"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/btn_up"
             app:layout_constraintTop_toBottomOf="@id/btnOK"
@@ -44,7 +44,7 @@
         <ImageButton
             android:id="@+id/btn_left"
             style="@style/CentralButton"
-
+            android:tag="@string/projector_cursor_left"
             app:layout_constraintBottom_toBottomOf="@+id/btnOK"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_up"
@@ -53,7 +53,7 @@
         <ImageButton
             android:id="@+id/btn_right"
             style="@style/CentralButton"
-
+            android:tag="@string/projector_cursor_right"
             app:layout_constraintBottom_toBottomOf="@+id/btnOK"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/btnOK"
@@ -69,6 +69,7 @@
         android:layout_height="@dimen/projector_remote_button_size"
         android:drawableTop="@drawable/round_power_settings_new_black_24dp"
         android:text="@string/power"
+        android:tag="@string/projector_power"
         app:layout_columnWeight="1" />
 
     <Button
@@ -77,6 +78,7 @@
         android:layout_height="@dimen/projector_remote_button_size"
         android:drawableTop="@drawable/ic_menu"
         android:text="@string/menu"
+        android:tag="@string/projector_menu"
         app:layout_columnWeight="1" />
 
     <Button
@@ -85,6 +87,7 @@
         android:layout_height="@dimen/projector_remote_button_size"
         android:drawableTop="@drawable/ic_reply"
         android:text="@string/back"
+        android:tag="@string/projector_back"
         app:layout_columnWeight="1" />
 
     <TextView
@@ -95,18 +98,26 @@
         app:layout_columnWeight="1" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btn_volume_up"
         style="@style/MyButton"
         android:layout_height="@dimen/projector_remote_button_size"
         app:layout_columnWeight="1"
+        android:tag="@string/projector_volume_up"
         app:srcCompat="@drawable/round_remove_black_24dp" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btn_volume_down"
         style="@style/MyButton"
         android:layout_height="@dimen/projector_remote_button_size"
         app:layout_columnWeight="1"
+        android:tag="@string/projector_volume_down"
         app:srcCompat="@drawable/round_add_black_24dp" />
 
 
+    <Button
+        android:id="@+id/btn_more"
+        style="@style/MyButton"
+        android:layout_height="@dimen/ac_remote_button_size"
+        android:text="@string/projector_more"
+        app:layout_columnWeight="1" />
 </androidx.gridlayout.widget.GridLayout>

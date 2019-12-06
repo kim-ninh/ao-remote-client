@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import com.ninhhk.aoremote.BackableActivity;
 import com.ninhhk.aoremote.ByteArrayUtils;
 import com.ninhhk.aoremote.Command;
+import com.ninhhk.aoremote.ExtraButtonDialog;
 import com.ninhhk.aoremote.IRUtils;
 import com.ninhhk.aoremote.ListUtils;
 import com.ninhhk.aoremote.R;
@@ -56,6 +57,11 @@ public abstract class RemoteControlActivity extends BackableActivity
             View v = iterator.next();
             v.setOnClickListener(this);
         }
+    }
+
+    protected void showExtraButtonDialog() {
+        ExtraButtonDialog dialog = new ExtraButtonDialog(extraButton, this);
+        dialog.show(getSupportFragmentManager(), "Extra button");
     }
 
     @Override
