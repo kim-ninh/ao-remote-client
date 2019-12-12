@@ -2,6 +2,8 @@ package com.ninhhk.aoremote;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.DhcpInfo;
+import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements RemoteAdapter.OnI
         rcv_user_remote.setAdapter(adapter);
 
         new QueryRemotesTask(MainActivity.this).execute();
+        new GetWifiInfoTask(MainActivity.this).execute();
     }
 
     @Override
@@ -59,10 +62,16 @@ public class MainActivity extends AppCompatActivity implements RemoteAdapter.OnI
                 break;
 
             case R.id.more:
+                openSettingsActivity();
                 break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void openSettingsActivity() {
+        Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+        startActivity(intent);
     }
 
     private void openAddDeviceActivity() {
@@ -102,6 +111,22 @@ public class MainActivity extends AppCompatActivity implements RemoteAdapter.OnI
                 rcv_user_remote.setVisibility(View.VISIBLE);
                 rcv_user_remote.setAdapter(new RemoteAdapter(remotes, MainActivity.this));
             }
+        }
+    }
+
+    private static class GetWifiInfoTask extends AsyncTask<Void, Void, Void> {
+        private Context context;
+
+        public GetWifiInfoTask(Context context) {
+            this.context = context.getApplicationContext();
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+            DhcpInfo dhcpInfo = wifiManager.getDhcpInfo();
+            String server = String.valueOf(dhcpInfo.serverAddress);
+            return null;
         }
     }
 

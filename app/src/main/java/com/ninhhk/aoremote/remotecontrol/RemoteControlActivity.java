@@ -39,7 +39,7 @@ public abstract class RemoteControlActivity extends BackableActivity
     protected List<RemoteButton> extraButton = new ArrayList<>(100);
     protected @LayoutRes
     int layoutResId;
-    private Command command = new ControlCommand();
+    private Command command;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,6 +47,7 @@ public abstract class RemoteControlActivity extends BackableActivity
         setContentView(layoutResId);
         initView();
         setButtonClickCallBack();
+        command = new ControlCommand(RemoteControlActivity.this);
     }
 
     protected abstract void initView();

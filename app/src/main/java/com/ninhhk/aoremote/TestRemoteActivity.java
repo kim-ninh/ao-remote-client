@@ -26,7 +26,7 @@ public class TestRemoteActivity extends BackableActivity implements View.OnClick
 
     private List<Remote> templateRemotes;
     private int currentIndex = 0;
-    private Command command = new TestCommand();
+    private Command command;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,7 @@ public class TestRemoteActivity extends BackableActivity implements View.OnClick
         String remote_type = getIntent().getStringExtra(getString(R.string.remote_type));
         String appTitle = String.format("Add %s remote", remote_type);
         getSupportActionBar().setTitle(appTitle);
+        command = new TestCommand(TestRemoteActivity.this);
         new LoadRemoteFromTemplateTask(TestRemoteActivity.this)
                 .execute(remote_type, brand_name);
     }

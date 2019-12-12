@@ -1,6 +1,10 @@
 package com.ninhhk.aoremote;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
+
+import androidx.preference.PreferenceManager;
 
 import java.io.IOException;
 
@@ -15,11 +19,17 @@ import okhttp3.Response;
 public class Command implements Callback {
     private static final String TAG = Command.class.getSimpleName();
     private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
-    private static String server = "192.168.84.11";
+    private static String server = "";
     private static int port = 1612;
-    private static String url = String.format("http://%s:%d", server, port);
+    private static String url;
     protected String cmd = "";
 
+    public Command(Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        server = sharedPreferences.getString("serverIP", context.getString(R.string.default_server_ip));
+        port = Integer.parseInt(sharedPreferences.getString("port", context.getString(R.string.default_server_port)));
+        url = String.format("http://%s:%d", server, port);
+    }
 
     public void start() {
         String json = String.format("{\"cmd\": \"%s\"}", cmd);
