@@ -38,6 +38,10 @@ public class Command implements Callback {
 
     public void send(byte[] bytes) {
         String hexa = ByteArrayUtils.toHex(bytes);
+        send(hexa);
+    }
+
+    public void send(String hexa) {
         String json = String.format("{\"code\": \"%s\"}", hexa);
         performPOSTRequest(json);
     }

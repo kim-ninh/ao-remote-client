@@ -85,6 +85,11 @@ public class TestRemoteActivity extends BackableActivity implements View.OnClick
 
                 command.send(ir_code);
             }
+
+            if (tag instanceof String) {
+                String hexa = (String) tag;
+                command.send(hexa);
+            }
         }
 
         if (v == btn_left) {
@@ -152,8 +157,9 @@ public class TestRemoteActivity extends BackableActivity implements View.OnClick
 
         Remote currentModel = templateRemotes.get(currentIndex - 1);
         String IR_code = currentModel.getButtonCode(getString(R.string.remote_power_test));
-        byte[] bytes = IRUtils.prontoHexToBytes(IR_code);
-        btn_power.setTag(bytes);
+//        byte[] bytes = IRUtils.prontoHexToBytes(IR_code);
+//        btn_power.setTag(bytes);
+        btn_power.setTag(IR_code);
 
         String str = String.format("Test buttons (%d/%d)", currentIndex, templateRemotes.size());
         txt_model_count.setText(str);

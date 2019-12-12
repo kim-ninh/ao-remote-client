@@ -15,7 +15,6 @@ import com.ninhhk.aoremote.BackableActivity;
 import com.ninhhk.aoremote.ByteArrayUtils;
 import com.ninhhk.aoremote.Command;
 import com.ninhhk.aoremote.ExtraButtonDialog;
-import com.ninhhk.aoremote.IRUtils;
 import com.ninhhk.aoremote.ListUtils;
 import com.ninhhk.aoremote.R;
 import com.ninhhk.aoremote.database.RemoteManager;
@@ -119,8 +118,9 @@ public abstract class RemoteControlActivity extends BackableActivity
                 if (remote.hasButton(buttonName)) {
 
                     String hexStr = remote.getButtonCode(buttonName);
-                    byte[] bytes = IRUtils.prontoHexToBytes(hexStr);
-                    v.setTag(R.id.ir_data, bytes);
+//                    byte[] bytes = IRUtils.prontoHexToBytes(hexStr);
+//                    v.setTag(R.id.ir_data, bytes);
+                    v.setTag(R.id.ir_data, hexStr);
                     v.setEnabled(true);
 
                     ListUtils.removeIf(extraButton, new ListUtils.Condition<RemoteButton>() {
@@ -150,6 +150,12 @@ public abstract class RemoteControlActivity extends BackableActivity
             String str_IR_code = ByteArrayUtils.toHex(IR_code);
             Log.i(TAG, "onClick: " + v.getTag() + " : " + str_IR_code);
             command.send(IR_code);
+        }
+
+        if (tag instanceof String) {
+            String hexa = (String) tag;
+            Log.i(TAG, "onClick: " + v.getTag() + " : " + hexa);
+            command.send(hexa);
         }
     }
 
