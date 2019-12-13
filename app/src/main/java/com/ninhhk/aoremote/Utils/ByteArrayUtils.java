@@ -1,4 +1,4 @@
-package com.ninhhk.aoremote;
+package com.ninhhk.aoremote.Utils;
 
 public class ByteArrayUtils {
     public static String toHex(byte[] bytes) {

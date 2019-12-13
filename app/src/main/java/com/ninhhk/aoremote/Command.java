@@ -6,6 +6,8 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
+import com.ninhhk.aoremote.Utils.ByteArrayUtils;
+
 import java.io.IOException;
 
 import okhttp3.Call;

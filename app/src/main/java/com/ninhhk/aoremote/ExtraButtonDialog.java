@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.ninhhk.aoremote.Utils.IRUtils;
 import com.ninhhk.aoremote.model.RemoteButton;
 
 import java.util.List;

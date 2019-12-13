@@ -1,4 +1,4 @@
-package com.ninhhk.aoremote;
+package com.ninhhk.aoremote.testing;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.ninhhk.aoremote.BackableActivity;
+import com.ninhhk.aoremote.Command;
+import com.ninhhk.aoremote.EditRemoteActivity;
+import com.ninhhk.aoremote.R;
 import com.ninhhk.aoremote.database.RemoteManager;
 import com.ninhhk.aoremote.model.Remote;
 

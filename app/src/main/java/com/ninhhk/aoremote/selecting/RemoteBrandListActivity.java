@@ -1,4 +1,4 @@
-package com.ninhhk.aoremote;
+package com.ninhhk.aoremote.selecting;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,7 +8,10 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ninhhk.aoremote.BackableActivity;
+import com.ninhhk.aoremote.R;
 import com.ninhhk.aoremote.database.RemoteManager;
+import com.ninhhk.aoremote.testing.TestRemoteActivity;
 
 public class RemoteBrandListActivity extends BackableActivity
         implements BrandAdapter.OnBrandItemClickListenter {

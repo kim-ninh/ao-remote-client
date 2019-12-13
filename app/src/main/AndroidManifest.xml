@@ -18,15 +18,15 @@
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"></activity>
         <activity android:name=".EditRemoteActivity" />
-        <activity android:name=".NoModelCompactActivity" />
-        <activity android:name=".TestRemoteActivity" />
-        <activity android:name=".RemoteBrandListActivity" />
-        <activity android:name=".PickDeviceTypeActivity" />
-        <activity android:name=".remotecontrol.RemoteControlActivity" />
-        <activity android:name=".remotecontrol.TvRemoteActivity" />
-        <activity android:name=".remotecontrol.FanRemoteActivity" />
-        <activity android:name=".remotecontrol.AcRemoteActivity" />
-        <activity android:name=".remotecontrol.ProjectorRemoteActivity" />
+        <activity android:name=".testing.NoModelCompactActivity" />
+        <activity android:name=".testing.TestRemoteActivity" />
+        <activity android:name=".selecting.RemoteBrandListActivity" />
+        <activity android:name=".selecting.PickDeviceTypeActivity" />
+        <activity android:name=".controling.RemoteControlActivity" />
+        <activity android:name=".controling.TvRemoteActivity" />
+        <activity android:name=".controling.FanRemoteActivity" />
+        <activity android:name=".controling.AcRemoteActivity" />
+        <activity android:name=".controling.ProjectorRemoteActivity" />
         <activity android:name=".NotImplementRemoteControlActivity" />
         <activity
             android:name=".SplashActivity"

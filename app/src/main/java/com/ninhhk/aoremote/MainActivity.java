@@ -17,9 +17,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ninhhk.aoremote.controling.ActivityClassFactory;
 import com.ninhhk.aoremote.database.RemoteManager;
 import com.ninhhk.aoremote.model.Remote;
-import com.ninhhk.aoremote.remotecontrol.ActivityClassFactory;
+import com.ninhhk.aoremote.selecting.PickDeviceTypeActivity;
 
 import java.util.ArrayList;
 import java.util.List;

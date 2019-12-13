@@ -1,4 +1,4 @@
-package com.ninhhk.aoremote.remotecontrol;
+package com.ninhhk.aoremote.controling;
 
 import android.view.View;
 import android.widget.Button;

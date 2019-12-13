@@ -9,7 +9,7 @@
     android:paddingEnd="8dp"
     app:columnCount="2"
     app:useDefaultMargins="true"
-    tools:context=".PickDeviceTypeActivity">
+    tools:context=".selecting.PickDeviceTypeActivity">
 
     <RadioGroup
         android:layout_width="match_parent"

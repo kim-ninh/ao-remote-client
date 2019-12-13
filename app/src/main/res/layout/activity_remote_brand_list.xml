@@ -4,7 +4,7 @@
     android:id="@+id/rcv_remote_brand"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RemoteBrandListActivity"
+    tools:context=".selecting.RemoteBrandListActivity"
     tools:listitem="@layout/remote_brand_item">
 
 </androidx.recyclerview.widget.RecyclerView>

@@ -1,10 +1,13 @@
-package com.ninhhk.aoremote;
+package com.ninhhk.aoremote.selecting;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+
+import com.ninhhk.aoremote.BackableActivity;
+import com.ninhhk.aoremote.R;
 
 public class PickDeviceTypeActivity extends BackableActivity implements View.OnClickListener {
 

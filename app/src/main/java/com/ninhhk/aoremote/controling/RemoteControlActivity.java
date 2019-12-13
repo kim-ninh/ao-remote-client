@@ -1,4 +1,4 @@
-package com.ninhhk.aoremote.remotecontrol;
+package com.ninhhk.aoremote.controling;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,11 +12,11 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 
 import com.ninhhk.aoremote.BackableActivity;
-import com.ninhhk.aoremote.ByteArrayUtils;
 import com.ninhhk.aoremote.Command;
 import com.ninhhk.aoremote.ExtraButtonDialog;
-import com.ninhhk.aoremote.ListUtils;
 import com.ninhhk.aoremote.R;
+import com.ninhhk.aoremote.Utils.ByteArrayUtils;
+import com.ninhhk.aoremote.Utils.ListUtils;
 import com.ninhhk.aoremote.database.RemoteManager;
 import com.ninhhk.aoremote.model.Remote;
 import com.ninhhk.aoremote.model.RemoteButton;
