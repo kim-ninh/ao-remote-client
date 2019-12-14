@@ -44,9 +44,10 @@ public class RemoteManager {
     public String[] getBrands(String deviceType) {
         List<String> brands = new ArrayList<>();
 
-        String whereClause = RemoteTable.Cols.TYPE + " = ?";
+        String whereClause = RemoteTable.Cols.TYPE + " = ? AND " +
+                RemoteTable.Cols.IS_TEMPLATE + " = ?";
 
-        RemoteCursorWrapper cursor = queryBrands(whereClause, new String[]{deviceType});
+        RemoteCursorWrapper cursor = queryBrands(whereClause, new String[]{deviceType, "1"});
         try {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
@@ -120,6 +121,7 @@ public class RemoteManager {
     public long cloneRemote(long remoteId) {
         Remote remote = getRemote(remoteId);
         remote.setIsTemplate(0);
+        remote.setName(String.format("%s %s", remote.getBrand(), remote.getDeviceType()));
         long newRemoteId = addRemote(remote);
 
         Iterator<Map.Entry<String, String>> buttonIterator = remote.getButtonsIterator();
@@ -194,6 +196,35 @@ public class RemoteManager {
         for (RemoteButton button : remote.getButtonList()) {
             updateButton(button);
         }
+    }
+
+    public String getRemoteName(long remoteId) {
+        String remoteName = "";
+        String whereClause = RemoteTable.Cols._ID + " = ?";
+        String[] whereArgs = {String.valueOf(remoteId)};
+
+        RemoteCursorWrapper cursor = queryRemotes(whereClause, whereArgs);
+        try {
+            cursor.moveToFirst();
+            if (!cursor.isAfterLast()) {
+                remoteName = cursor.getName();
+            }
+
+        } finally {
+            cursor.close();
+        }
+
+        return remoteName;
+    }
+
+    public void updateRemoteName(long remoteId, String name) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(RemoteTable.Cols.NAME, name);
+
+        String selection = RemoteTable.Cols._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(remoteId)};
+
+        mDatabase.update(RemoteTable.NAME, contentValues, selection, selectionArgs);
     }
 
     private void updateButton(RemoteButton button) {

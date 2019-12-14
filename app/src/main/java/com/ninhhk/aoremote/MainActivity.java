@@ -2,8 +2,6 @@ package com.ninhhk.aoremote;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.DhcpInfo;
-import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,11 +11,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ninhhk.aoremote.controling.ActivityClassFactory;
+import com.ninhhk.aoremote.controling.RemoteControlActivityClassFactory;
 import com.ninhhk.aoremote.database.RemoteManager;
 import com.ninhhk.aoremote.model.Remote;
 import com.ninhhk.aoremote.selecting.PickDeviceTypeActivity;
@@ -25,7 +22,7 @@ import com.ninhhk.aoremote.selecting.PickDeviceTypeActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements RemoteAdapter.OnItemClickListener {
+public class MainActivity extends BaseActivity implements RemoteAdapter.OnItemClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     RecyclerView rcv_user_remote;
@@ -44,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements RemoteAdapter.OnI
         rcv_user_remote.setAdapter(adapter);
 
         new QueryRemotesTask(MainActivity.this).execute();
-        new GetWifiInfoTask(MainActivity.this).execute();
+//        new GetWifiInfoTask(MainActivity.this).execute();
     }
 
     @Override
@@ -82,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements RemoteAdapter.OnI
 
     @Override
     public void onItemClick(Remote remote) {
-        Class<?> targetActivityClass = ActivityClassFactory.with(getResources())
+        Class<?> targetActivityClass = RemoteControlActivityClassFactory.with(getResources())
                 .get(remote.getDeviceType());
 
         Intent intent = new Intent(this, targetActivityClass);
@@ -115,20 +112,20 @@ public class MainActivity extends AppCompatActivity implements RemoteAdapter.OnI
         }
     }
 
-    private static class GetWifiInfoTask extends AsyncTask<Void, Void, Void> {
-        private Context context;
-
-        public GetWifiInfoTask(Context context) {
-            this.context = context.getApplicationContext();
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-            DhcpInfo dhcpInfo = wifiManager.getDhcpInfo();
-            String server = String.valueOf(dhcpInfo.serverAddress);
-            return null;
-        }
-    }
+//    private static class GetWifiInfoTask extends AsyncTask<Void, Void, Void> {
+//        private Context context;
+//
+//        public GetWifiInfoTask(Context context) {
+//            this.context = context.getApplicationContext();
+//        }
+//
+//        @Override
+//        protected Void doInBackground(Void... voids) {
+//            WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+//            DhcpInfo dhcpInfo = wifiManager.getDhcpInfo();
+//            String server = String.valueOf(dhcpInfo.serverAddress);
+//            return null;
+//        }
+//    }
 
 }

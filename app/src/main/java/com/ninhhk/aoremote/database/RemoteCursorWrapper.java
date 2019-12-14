@@ -36,4 +36,9 @@ public class RemoteCursorWrapper extends CursorWrapper {
     public int getId() {
         return getInt(getColumnIndex(RemoteTable.Cols._ID));
     }
+
+
+    public String getName() {
+        return getString(getColumnIndex(RemoteTable.Cols.NAME));
+    }
 }

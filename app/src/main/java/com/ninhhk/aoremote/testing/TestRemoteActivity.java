@@ -9,9 +9,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.ninhhk.aoremote.AsyncTaskCallback;
 import com.ninhhk.aoremote.BackableActivity;
 import com.ninhhk.aoremote.Command;
-import com.ninhhk.aoremote.EditRemoteActivity;
+import com.ninhhk.aoremote.EditRemoteNameActivity;
+import com.ninhhk.aoremote.NoConnectionAlertDialog;
 import com.ninhhk.aoremote.R;
 import com.ninhhk.aoremote.database.RemoteManager;
 import com.ninhhk.aoremote.model.Remote;
@@ -44,20 +46,35 @@ public class TestRemoteActivity extends BackableActivity implements View.OnClick
         String appTitle = String.format("Add %s remote", remote_type);
         getSupportActionBar().setTitle(appTitle);
         command = new TestCommand(TestRemoteActivity.this);
-        new LoadRemoteFromTemplateTask(TestRemoteActivity.this)
+        new LoadRemoteFromTemplateTask(TestRemoteActivity.this, remotes -> {
+            templateRemotes = remotes;
+            currentIndex = 1;
+            updateCurrentData();
+        })
                 .execute(remote_type, brand_name);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        command.start();
+        command.start(new Command.ResponseListener() {
+            @Override
+            public void onReceiveResponse(String response) {
+
+            }
+
+            @Override
+            public void onError(String error) {
+                NoConnectionAlertDialog dialog = new NoConnectionAlertDialog(error);
+                dialog.show(getSupportFragmentManager(), "No connection");
+            }
+        });
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        command.end();
+        command.end(null);
     }
 
     private void initView() {
@@ -119,10 +136,10 @@ public class TestRemoteActivity extends BackableActivity implements View.OnClick
         if (v == btn_yes) {
 
             long templateRemoteId = templateRemotes.get(currentIndex - 1).getId();
-            new CloneTemplateRemoteTask(TestRemoteActivity.this)
+            new CloneTemplateRemoteTask(TestRemoteActivity.this, this::openEditRemoteActivity)
                     .execute(templateRemoteId);
 
-            command.end();
+            command.end(null);
         }
     }
 
@@ -141,7 +158,7 @@ public class TestRemoteActivity extends BackableActivity implements View.OnClick
     }
 
     private void openEditRemoteActivity(long newRemoteId) {
-        Intent intent = new Intent(TestRemoteActivity.this, EditRemoteActivity.class);
+        Intent intent = new Intent(TestRemoteActivity.this, EditRemoteNameActivity.class);
         intent.putExtra(getString(R.string.remoteId), newRemoteId);
         startActivity(intent);
     }
@@ -169,12 +186,14 @@ public class TestRemoteActivity extends BackableActivity implements View.OnClick
         txt_model_count.setText(str);
     }
 
-    private class LoadRemoteFromTemplateTask extends AsyncTask<String, Void, List<Remote>> {
+    private static class LoadRemoteFromTemplateTask extends AsyncTask<String, Void, List<Remote>> {
 
+        private final AsyncTaskCallback<List<Remote>> callback;
         private RemoteManager remoteManager;
 
-        public LoadRemoteFromTemplateTask(Context context) {
+        public LoadRemoteFromTemplateTask(Context context, AsyncTaskCallback<List<Remote>> callback) {
             remoteManager = RemoteManager.get(context);
+            this.callback = callback;
         }
 
         @Override
@@ -191,33 +210,30 @@ public class TestRemoteActivity extends BackableActivity implements View.OnClick
         @Override
         protected void onPostExecute(List<Remote> remotes) {
             super.onPostExecute(remotes);
-            templateRemotes = remotes;
-
-            currentIndex = 1;
-            updateCurrentData();
+            callback.onComplete(remotes);
         }
     }
 
-    private class CloneTemplateRemoteTask extends AsyncTask<Long, Void, Long> {
+    private static class CloneTemplateRemoteTask extends AsyncTask<Long, Void, Long> {
 
+        private final AsyncTaskCallback<Long> callback;
         RemoteManager remoteManager;
 
-        public CloneTemplateRemoteTask(Context context) {
+        public CloneTemplateRemoteTask(Context context, AsyncTaskCallback<Long> callback) {
             remoteManager = RemoteManager.get(context);
+            this.callback = callback;
         }
 
         @Override
         protected Long doInBackground(Long... longs) {
             long templateRemoteId = longs[0];
-            long newRemoteId = remoteManager.cloneRemote(templateRemoteId);
-            return newRemoteId;
+            return remoteManager.cloneRemote(templateRemoteId);
         }
 
         @Override
         protected void onPostExecute(Long newRemoteId) {
             super.onPostExecute(newRemoteId);
-
-            openEditRemoteActivity(newRemoteId);
+            callback.onComplete(newRemoteId);
         }
     }
 }

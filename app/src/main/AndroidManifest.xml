@@ -17,7 +17,7 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"></activity>
-        <activity android:name=".EditRemoteActivity" />
+        <activity android:name=".EditRemoteNameActivity" />
         <activity android:name=".testing.NoModelCompactActivity" />
         <activity android:name=".testing.TestRemoteActivity" />
         <activity android:name=".selecting.RemoteBrandListActivity" />
@@ -39,6 +39,12 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".BackableActivity" />
+        <activity android:name=".learning.LearnRemoteActivity" />
+        <activity android:name=".learning.LearnTVRemoteActivity" />
+        <activity android:name=".learning.LearnProjectorRemoteActivity" />
+        <activity android:name=".learning.LearnACRemoteActivity" />
+        <activity android:name=".learning.LearnFanRemoteActivity" />
+        <activity android:name=".BaseActivity" />
     </application>
 
 </manifest>

@@ -5,16 +5,16 @@ import android.content.res.Resources;
 import com.ninhhk.aoremote.NotImplementRemoteControlActivity;
 import com.ninhhk.aoremote.R;
 
-public class ActivityClassFactory {
+public class RemoteControlActivityClassFactory {
 
     private final Resources resource;
 
-    private ActivityClassFactory(Resources resources) {
+    private RemoteControlActivityClassFactory(Resources resources) {
         this.resource = resources;
     }
 
-    public static ActivityClassFactory with(Resources resources) {
-        return new ActivityClassFactory(resources);
+    public static RemoteControlActivityClassFactory with(Resources resources) {
+        return new RemoteControlActivityClassFactory(resources);
     }
 
     public Class<?> get(String s) {

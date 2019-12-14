@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-import com.ninhhk.aoremote.Utils.IRUtils;
 import com.ninhhk.aoremote.model.RemoteButton;
 
 import java.util.List;
@@ -79,11 +78,11 @@ public class ExtraButtonDialog extends BottomSheetDialogFragment {
 
         public void bind(RemoteButton remoteButton, View.OnClickListener clickListener) {
             String hexStr = remoteButton.getCode();
-            byte[] bytes = IRUtils.prontoHexToBytes(hexStr);
+//            byte[] bytes = IRUtils.prontoHexToBytes(hexStr);
 
             button.setText(remoteButton.getName());
             button.setTag(remoteButton.getName());
-            button.setTag(R.id.ir_data, bytes);
+            button.setTag(R.id.ir_data, hexStr);
             button.setOnClickListener(clickListener);
         }
     }

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ninhhk.aoremote.AsyncTaskCallback;
 import com.ninhhk.aoremote.BackableActivity;
 import com.ninhhk.aoremote.R;
 import com.ninhhk.aoremote.database.RemoteManager;
@@ -31,7 +32,10 @@ public class RemoteBrandListActivity extends BackableActivity
         String remote_type = getIntent().getStringExtra(getString(R.string.remote_type));
         String appTitle = String.format("Select %s", remote_type);
         getSupportActionBar().setTitle(appTitle);
-        new QueryRemoteBrandTask(RemoteBrandListActivity.this)
+        new QueryRemoteBrandTask(RemoteBrandListActivity.this, brands -> {
+            rcv_remote_brand.setAdapter(new BrandAdapter(brands,
+                    RemoteBrandListActivity.this));
+        })
                 .execute(remote_type);
     }
 
@@ -45,12 +49,14 @@ public class RemoteBrandListActivity extends BackableActivity
     }
 
 
-    private class QueryRemoteBrandTask extends AsyncTask<String, Void, String[]> {
+    private static class QueryRemoteBrandTask extends AsyncTask<String, Void, String[]> {
 
+        private final AsyncTaskCallback<String[]> callback;
         private RemoteManager remoteManager;
 
-        public QueryRemoteBrandTask(Context context) {
+        public QueryRemoteBrandTask(Context context, AsyncTaskCallback<String[]> callback) {
             remoteManager = RemoteManager.get(context);
+            this.callback = callback;
         }
 
         @Override
@@ -62,9 +68,8 @@ public class RemoteBrandListActivity extends BackableActivity
         @Override
         protected void onPostExecute(String[] brands) {
             super.onPostExecute(brands);
-            rcv_remote_brand.setAdapter(new BrandAdapter(brands, RemoteBrandListActivity.this));
+            callback.onComplete(brands);
         }
     }
-
 
 }

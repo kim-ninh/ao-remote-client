@@ -29,6 +29,11 @@ public class Remote {
         this(-1, name, isTemplate, brand, deviceType);
     }
 
+    // for user insert custom remote
+    public Remote(String deviceType) {
+        this(-1, "No name", 0, "Unknown", deviceType);
+    }
+
     public void initButtons(List<RemoteButton> remoteButtons) {
         for (RemoteButton button :
                 remoteButtons) {

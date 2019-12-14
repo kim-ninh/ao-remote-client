@@ -66,6 +66,17 @@
     <string name="tv_cursor_right">Cursor Right</string>
     <string name="tv_ok">OK</string>
     <string name="tv_more">More</string>
+    <string name="tv_digit_0">Digit 0</string>
+    <string name="tv_digit_1">Digit 1</string>
+    <string name="tv_digit_2">Digit 2</string>
+    <string name="tv_digit_3">Digit 3</string>
+    <string name="tv_digit_4">Digit 4</string>
+    <string name="tv_digit_5">Digit 5</string>
+    <string name="tv_digit_6">Digit 6</string>
+    <string name="tv_digit_7">Digit 7</string>
+    <string name="tv_digit_8">Digit 8</string>
+    <string name="tv_digit_9">Digit 9</string>
+    <string name="tv_digit_separator">Digit Separator</string>
 
     <!--    AC remote button tag -->
     <string name="ac_power">Power Toggle</string>
@@ -104,5 +115,9 @@
 
     <string name="default_server_ip">192.168.48.11</string>
     <string name="default_server_port">1612</string>
+    <string name="complete">Complete</string>
 
+    <string name="waiting_ir_signal_state">Waiting for IR signal</string>
+    <string name="received_ir_signal_state">What button has pressed?</string>
+    <string name="timeout_waiting_ir_state">Timeout - Press to listen again</string>
 </resources>

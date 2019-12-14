@@ -6,4 +6,7 @@
     <color name="gray">#DDD</color>
     <color name="red">#F44336</color>
     <color name="dark_gray">#61D6D6D6</color>
+    <color name="waiting_ir_signal">#FF9800</color>
+    <color name="received_ir_signal">#FFFFFF</color>
+    <color name="timeout_waiting_ir">#F44336</color>
 </resources>

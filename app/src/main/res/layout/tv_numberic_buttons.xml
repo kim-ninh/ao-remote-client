@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.gridlayout.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:columnCount="3"
+    app:useDefaultMargins="true">
+
+    <Button
+        android:id="@+id/digit_1"
+        android:tag="@string/tv_digit_1"
+        android:text="1"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/digit_2"
+        android:tag="@string/tv_digit_2"
+        android:text="2"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/digit_3"
+        android:tag="@string/tv_digit_3"
+        android:text="3"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/digit_4"
+        android:tag="@string/tv_digit_4"
+        android:text="4"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/digit_5"
+        android:tag="@string/tv_digit_5"
+        android:text="5"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/digit_6"
+        android:tag="@string/tv_digit_6"
+        android:text="6"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/digit_7"
+        android:tag="@string/tv_digit_7"
+        android:text="7"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/digit_8"
+        android:tag="@string/tv_digit_8"
+        android:text="8"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/digit_9"
+        android:tag="@string/tv_digit_9"
+        android:text="9"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/digit_seperator"
+        android:tag="@string/tv_digit_separator"
+        android:text="-/--"
+        app:layout_columnWeight="1" />
+
+    <Button
+        android:id="@+id/digit_0"
+        android:tag="@string/tv_digit_0"
+        android:text="0"
+        app:layout_columnWeight="1" />
+</androidx.gridlayout.widget.GridLayout>

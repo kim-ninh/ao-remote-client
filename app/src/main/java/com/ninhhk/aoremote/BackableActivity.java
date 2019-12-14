@@ -5,9 +5,8 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class BackableActivity extends AppCompatActivity {
+public class BackableActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

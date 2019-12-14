@@ -8,6 +8,7 @@ import android.widget.RadioButton;
 
 import com.ninhhk.aoremote.BackableActivity;
 import com.ninhhk.aoremote.R;
+import com.ninhhk.aoremote.learning.LearnRemoteActivityClassFactory;
 
 public class PickDeviceTypeActivity extends BackableActivity implements View.OnClickListener {
 
@@ -71,7 +72,11 @@ public class PickDeviceTypeActivity extends BackableActivity implements View.OnC
                 startActivity(intent);
 
             } else if (rd_btn_manual.isChecked()) {
-                //TODO: start RemoteLearningActivity
+
+                Class<?> destClass = LearnRemoteActivityClassFactory.with(getResources()).get(remote_type);
+                Intent intent = new Intent(this, destClass);
+                intent.putExtra(getString(R.string.remote_type), remote_type);
+                startActivity(intent);
             }
         }
     }
