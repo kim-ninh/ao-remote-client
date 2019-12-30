@@ -1,4 +1,16 @@
-  uses: msfjarvis/setup-android@1.0
-  with:
-    entrypoint: ./gradlew
-    args: dependencies spotlessApply detekt assembleDebug
+
+name: Setup Android
+
+on: [push]
+
+jobs:
+   build:
+     
+     runs-on: ubuntu-latest
+     
+     steps:
+     - name: config
+       uses: msfjarvis/setup-android@1.0
+       with:
+        entrypoint: ./gradlew
+        args: dependencies spotlessApply detekt assembleDebug
